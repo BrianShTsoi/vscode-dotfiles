@@ -1,0 +1,158 @@
+{
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+
+    // Make Ctril+P work as up arrow in terminal
+    "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen"
+    ],
+
+    // Attempt fix to vim.foldfix
+    // The overall issue is "three fold": 
+    // 1. have to prevent vim j and k from opening a fold
+    // 2. use relative numbers to jump around
+    // 3. use relative numbers to delete
+
+    // "vim.normalModeKeyBindingsNonRecursive": [
+    //     {
+    //         "before": ["j"],
+    //         "commands": ["cursorDown"]
+    //     },
+    //     {
+    //         "before": ["k"],
+    //         "commands": ["cursorUp"]
+    //     }
+    // ],
+
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+    ],
+    
+    // Past attempt of substituting vim.foldfix
+    // "vim.normalModeKeyBindings": [
+    //     {
+    //         "before": ["j"],
+    //         "after": ["g", "j"]
+    //     },
+    //     {
+    //         "before": ["k"],
+    //         "after": ["g", "k"]
+    //     }
+    // ],
+
+
+    "vim.smartRelativeLine": false,
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Ubuntu-20.04 (WSL)": {
+            "path": "C:\\Windows\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Ubuntu-20.04"
+            ]
+        }
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "none",
+    "[scheme]": {
+        "editor.autoClosingQuotes": "never"
+    },
+    "remote.SSH.remotePlatform": {
+        "remote.ecf.utoronto.ca": "linux",
+        "ug172.eecg.utoronto.ca": "linux",
+        "ug169.eecg.utoronto.ca": "linux",
+        "172.24.57.30": "linux",
+        "gui-vm": "linux",
+        "vivi": "linux",
+        "teach.cs.utoronto.ca": "linux",
+        "192.168.11.68": "linux",
+        "192.168.202.68": "linux",
+        "raspberrypi": "linux",
+        "dbsrv1.cdf.toronto.edu": "linux",
+        "192.168.62.68": "linux",
+        "192.168.181.68": "linux",
+        "192.168.26.68": "linux",
+        "192.168.99.68": "linux",
+        "raspberrypi.local": "linux"
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.sideBar.location": "right",
+    "zenMode.hideLineNumbers": false,
+    // "vim.foldfix": true,
+    "remoteX11.SSH.privateKey": "~/.ssh/ug_rsa.pem",
+    "files.autoSave": "afterDelay",
+    "editor.cursorSurroundingLines": 2,
+    "scm.diffDecorations": "none",
+    "window.menuBarVisibility": "compact",
+    // temp solution for vim undo bug
+  //    "vim.normalModeKeyBindingsNonRecursive": [
+  //   {
+  //     "before": [
+  //       "u"
+  //     ],
+  //     "commands": [
+  //       "undo"
+  //     ]
+  //   },
+  //   {
+  //     "before": [
+  //       "c-r"
+  //     ],
+  //     "commands": [
+  //       "redo"
+  //     ]
+  //   }
+  // ],
+  "arduino.useArduinoCli": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+"workbench.colorTheme": "Dracula",
+// "vim.vimrc.path": "\\\\wsl.localhost\\Ubuntu-20.04\\home\\brian\\.vimrc",
+"editor.lineNumbers": "relative",
+"files.associations": {
+    "*.rkt": "racket"
+},
+"[racket]": {
+
+    "editor.rulers": [
+        102
+    ],
+    "editor.wordSeparators": "()[]{}\",'`;#|"
+},
+"remote.autoForwardPortsSource": "hybrid",
+"editor.inlayHints.enabled": "off",
+"java.completion.favoriteStaticMembers": [
+    "org.apache.log4j.*",
+    "org.junit.Assert.*",
+    "org.junit.Assume.*",
+    "org.junit.jupiter.api.Assertions.*",
+    "org.junit.jupiter.api.Assumptions.*",
+    "org.junit.jupiter.api.DynamicContainer.*",
+    "org.junit.jupiter.api.DynamicTest.*",
+    "org.mockito.Mockito.*",
+    "org.mockito.ArgumentMatchers.*",
+    "org.mockito.Answers.*"
+],
+"workbench.editor.enablePreview": false,
+}
